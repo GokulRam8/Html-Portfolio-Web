@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NDX344NL');</script>
 <!-- End Google Tag Manager -->
-  
+
 
  </head>
  <body>
@@ -34,6 +34,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="./public/about.html">About Me</a>
     <a href="./public/contact.html">Contact Me</a>
 
+<script>
+        // Example of calculating CDN load time using the Performance API
+        document.addEventListener('DOMContentLoaded', function () {
+            var startTime = performance.timing.navigationStart;
+            var endTime = performance.timing.domContentLoadedEventEnd;
+            var timeTaken = endTime - startTime; // Calculate load time
+
+            // Send the CDN load time event to Google Analytics
+            gtag('event', 'CDN Load Time', {
+                'event_category': 'Performance',
+                'event_label': 'CDN Asset',
+                'value': timeTaken
+            });
+        });
+    </script>
+  
+  
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2427F0MG20"></script>
 <script>
